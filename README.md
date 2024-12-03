@@ -16,7 +16,10 @@ This Python project allows you to **download photos and videos** from a **Telegr
 
 ### Installation
 
-Install the zip file under the latest release found [here](https://github.com/lavanyagarg112/teletodrive/releases). Next, follow the steps below.
+1. Download the source code zip file under the latest release found [here](https://github.com/lavanyagarg112/teletodrive/releases).
+2. Unzip the file
+3. Open the folder in the terminal.
+4. Next, follow the steps below.
 
 ### Required Python Libraries
 
