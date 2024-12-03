@@ -64,6 +64,7 @@ Follow these steps to obtain Google Drive credentials:
 3. Navigate to **APIs & Services > Library** and enable the **Google Drive API**.
 4. Go to **APIs & Services > Credentials**, click **Create Credentials**, and choose **OAuth 2.0 Client IDs**.
 5. Download the **`client_secrets.json`** file and place it in your project directory.
+6. Important: Save the file with the exact name **`client_secrets.json`**
 
 ### 3. **Set Up Environment Variables**
 
@@ -101,6 +102,8 @@ python upload_photo.py
 
 The script will:
 
+- Authenticate your google drive
+- Authenticate telegram if not already authenticated
 - Download photos from the specified Telegram chat/channel.
 - Upload them to the Google Drive folder specified by `FOLDER_ID_PHOTOS`.
 
@@ -114,12 +117,14 @@ python upload_video.py
 
 The script will:
 
+- Authenticate your google drive
+- Authenticate telegram if not already authenticated
 - Download videos from the specified Telegram chat/channel.
 - Upload them to the Google Drive folder specified by `FOLDER_ID_VIDEOS`.
 
 ---
 
-## File Structure
+## Basic File Structure
 
 ```
 photo-video-upload-project/
@@ -131,5 +136,7 @@ photo-video-upload-project/
 ├── requirements.txt    # Python dependencies
 └── README.md           # Project documentation
 ```
+
+More files such as credential files, download files or session files will be created as you work.
 
 ---
