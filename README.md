@@ -2,7 +2,7 @@
 
 ## Description
 
-This Python project allows you to **download photos and videos** from a **Telegram chat/channel** and **upload them to Google Drive**. The project provides two separate scripts:
+This Python project allows you to **download photos and videos** from a **Telegram topic from a channel** and **upload them to Google Drive**. The project provides two separate scripts:
 
 - **`upload_photo.py`**: Downloads photos from Telegram and uploads them to a Google Drive folder.
 - **`upload_video.py`**: Downloads videos from Telegram and uploads them to a separate Google Drive folder.
@@ -147,3 +147,18 @@ photo-video-upload-project/
 More files such as credential files, download files or session files will be created as you work.
 
 ---
+
+## Coming soon
+
+1. download photos/videos from chats
+2. download photos/videos from entire channel
+
+If you are familiar with python/coding, you can do the above yourself by:
+- remove the `reply_to=` parameter from `client.get_messages`
+- set the `chat_name` env to be the individual chat id or channel id instead. topic id will not be used.
+
+---
+
+## License
+
+This project is **not open source** and is intended for **personal or internal use only**. Redistribution and modification of the code are not permitted without prior written consent from the author.
