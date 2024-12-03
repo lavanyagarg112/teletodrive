@@ -14,6 +14,10 @@ This Python project allows you to **download photos and videos** from a **Telegr
 - **Google Drive API credentials** (OAuth 2.0 client)
 - **Environment variables** for secure handling of credentials
 
+### Installation
+
+Install the zip file under releases. Next, follow the steps below.
+
 ### Required Python Libraries
 
 To install the required libraries, you will need to first create a virtual environment and then install the dependencies from the `requirements.txt` file.
