@@ -73,7 +73,52 @@ Follow these steps to obtain Google Drive credentials:
 5. Download the **`client_secrets.json`** file and place it in your project directory.
 6. Important: Save the file with the exact name **`client_secrets.json`**
 
-### 3. **Set Up Environment Variables**
+
+### 3. **Get `chat_id` and `topic_id` for Telegram**
+
+To download media from a Telegram chat/channel, you will need the `chat_id` and `topic_id`. Here's how to get them:
+
+#### a) **Get `chat_id`** (for any chat or channel):
+1. You can use the **Telethon** library to get the `chat_id` of a Telegram chat or channel.
+2. First, authenticate using the `Telethon` client and then retrieve the chat details using the following code:
+
+```python
+from telethon.sync import TelegramClient
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+api_id = os.getenv("API_ID")
+api_hash = os.getenv("API_HASH")
+client = TelegramClient('session_name', api_id, api_hash)
+
+client.start()
+
+# Get the chat (replace 'your_chat_name' with the actual chat/channel name or username)
+chat = client.get_entity('your_chat_name')
+
+# Print chat ID
+print(f"Chat ID: {chat.id}")
+```
+
+This will print the `chat_id` of the chat/channel. 
+
+#### b) **Get `topic_id`** (for a channel with topics):
+1. If you want to get the **topic_id** of a channel that has multiple topics (i.e., a discussion group under a channel), you can use the following code with **Telethon**:
+
+```python
+# Replace 'your_chat_name' with the name of the chat/channel
+chat = client.get_entity('your_chat_name')
+
+# Get the messages (topics) in the chat/channel
+for message in client.iter_messages(chat):
+    print(f"Message: {message.text}, Topic ID: {message.peer_id}")
+```
+
+This will give you the **`topic_id`** for each message in the discussion thread.
+
+### 4. **Set Up Environment Variables**
 
 Create a `.env` file in your project directory and add the following environment variables:
 
