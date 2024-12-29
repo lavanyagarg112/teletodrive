@@ -2,3 +2,6 @@
 client_secrets.json
 venv/
 *.session
+downloads/
+*.session-journal
+mycreds.txt
