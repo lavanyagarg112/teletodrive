@@ -7,6 +7,8 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 from dotenv import load_dotenv
 import shutil
+from pytz import timezone
+from datetime import datetime
 
 load_dotenv()
 
@@ -63,6 +65,9 @@ def download_and_upload_videos():
 
         total_messages = 0
         offset_id = 0
+        tz = timezone(env_vars.get('TIMEZONE', 'UTC'))
+        start_date = tz.localize(datetime.strptime(env_vars['START_DATE'], '%Y-%m-%d'))  # Format: 'YYYY-MM-DD'
+        end_date = tz.localize(datetime.strptime(env_vars['END_DATE'], '%Y-%m-%d'))
 
         while True:
             # Fetch messages from the topic
@@ -74,6 +79,8 @@ def download_and_upload_videos():
                 break  # No more messages to fetch
 
             for message in messages:
+                if message.date < start_date or message.date > end_date:
+                    continue
                 if message.video:  # Check if the message contains a video
                     # Download the video to a local 'downloads' folder
                     file_path = message.download_media(file="./downloads/")
