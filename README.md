@@ -129,6 +129,9 @@ FOLDER_ID_PHOTOS=your_google_drive_photos_folder_id
 FOLDER_ID_VIDEOS=your_google_drive_videos_folder_id
 CHAT_NAME=your_telegram_chat_name_or_id
 TOPIC_ID=your_telegram_topic_id
+START_DATE=start_date_to_filter_your_photos_and_videos
+END_DATE=end_date_to_filter_your_photos_and_videos
+TIMEZONE=your_timezone_as_per_standard_notation
 ```
 
 Replace the placeholders with your actual credentials and folder information:
@@ -139,6 +142,9 @@ Replace the placeholders with your actual credentials and folder information:
 - **FOLDER_ID_VIDEOS**: Google Drive folder ID where videos will be uploaded.
 - **CHAT_NAME**: The name or ID of the Telegram chat/channel from which you are downloading media.
 - **TOPIC_ID**: The topic ID in the Telegram chat/channel.
+- **START_DATE**: The start date from when you want the photos/videos to be taken.
+- **END_DATE**: The end date until when you want the photos/videos to be taken.
+- **TIMEZONE**: Your current timezone to ensure that the start and end dates are accurate. (eg: Asia/Singapore. It will default to UTC if wrong format or not provided)
 
 ---
 
