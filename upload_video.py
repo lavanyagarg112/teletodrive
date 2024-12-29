@@ -15,8 +15,8 @@ load_dotenv()
 env_vars = os.environ
 
 # Telegram API credentials
-api_id = env_vars['API_ID']  # Replace with your Telegram API ID
-api_hash = env_vars['API_HASH']  # Replace with your Telegram API Hash
+api_id = env_vars['API_ID']
+api_hash = env_vars['API_HASH']
 
 # Initialize Telegram client
 client = TelegramClient('session2_videos', api_id, api_hash)
